@@ -1,13 +1,13 @@
 # JDom
 
-This function convert a JSON-structured data into DOM.
+This class convert a JSON-structured data into DOM.
 
-The function receives an object in following structure:
+The constructor receives an object in following structure:
 
 ```Javascript
 {
     type: "p",    // type of the DOM element you want to create
-    content: "Method to add text.",
+    content: "You can add your content here",   // string, HTML element, or JDom object are accepted. 
     attr: {      // the attributs you want to set for the element
         className: "text-big",
         innerHTML: "Another method to add content.",    // you can create the child nodes by using innerHTML
@@ -31,10 +31,10 @@ The function receives an object in following structure:
 }
 ```
 
-Example:
+## Example
 
 ```javascript
-const card = newElement({
+const card = new JDom({
         type: "div",
         attr: {
             className: "card-body"
@@ -60,7 +60,13 @@ const card = newElement({
     });
 ```
 
-Following HTML document will be created:
+To insert the element into your HTML document, use `render()` function:
+
+```javascript
+card.render(".container");
+```
+
+Following DOM elements will be created:
 
 ```html
     <div class="card-body">
@@ -69,8 +75,8 @@ Following HTML document will be created:
     </div>
 ```
 
-Then, the the event listener will be added to `<p class="card-text">some text...</p>` element:
+and the the event listener will be added to `<p class="card-text">some text...</p>` element:
 
 ```javascript
-node.addeventListener("click", e => { console.log("clicked"); } )
+card.addeventListener("click", e => { console.log("clicked"); } )
 ```
