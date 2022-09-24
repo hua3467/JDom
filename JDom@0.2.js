@@ -85,7 +85,7 @@ class JDom {
                         ele.append(child.elements);
                     } else if (typeof(child) === "string") {
                         // ele.append(this.#getDomFromString(child))
-                        ele.append(this.#getDomFromString(`<li>${child}</li>`))
+                        ele.append(this.#getDomFromString(node.type === "ul" || node.type === "ol" ? `<li>${child}</li>` : `<p>${child}</p>`))
                     } else if (child instanceof Element) {
                         ele.append(child);
                     } else {

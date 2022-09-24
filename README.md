@@ -80,3 +80,43 @@ and the the event listener will be added to `<p class="card-text">some text...</
 ```javascript
 card.addeventListener("click", e => { console.log("clicked"); } )
 ```
+
+## Update @0.2
+
+You can create a list by adding an array of string to children:
+
+```JavaScript
+new JDom({
+            type: 'ul',
+            children: ["first item", "second item", "third item"]
+        }).render(".text-list");
+```
+
+Result:
+
+```html
+<ul>
+    <li>first item</li>
+    <li>second item</li>
+    <li>third item</li>
+</ul>
+```
+
+If the container element is not ```ul``` or ```ol```, a list of ```p``` tag will be created:
+
+```JavaScript
+new JDom({
+            type: 'div',
+            children: ["first item", "second item", "third item"]
+        }).render(".text-list");
+```
+
+Result:
+
+```html
+<div>
+    <p>first item</p>
+    <p>second item</p>
+    <p>third item</p>
+</div>
+```
