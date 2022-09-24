@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="text-list"></div>
+    <div class="list-1"></div>
+    <div class="list-2"></div>
+
+    <script src="./JDom@0.2.js"></script>
+    <script>
+        const data = {
+            "p1660094780324": {
+                "city": "Fargo",
+                "coord": [
+                    -96.7892092,
+                    46.8741452
+                ],
+                "country": "United States",
+                "description": "This was a department store located on 620 thru 624 Main Avenue in Fargo. Built 1894 and 1904 by architects McMillen & Tenbusch; Andrew J. O`Shea ",
+                "googleMapUrl": "https://www.google.com/maps/place/DeLendrecie's+Department+Store/@46.8741452,-96.7913979,17z/data=!3m1!4b1!4m5!3m4!1s0x52c8c9af0428dde5:0xfc72148e3762b7df!8m2!3d46.8741558!4d-96.7893883",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660094780324.jpg?alt=media&token=93bed59f-2891-4da6-9f46-1ff886954e9b",
+                "location": "624 Main Ave",
+                "name": "The deLendrecie’s Department Store",
+                "pid": "p1660094780324",
+                "spaceLink": "",
+                "state": "ND",
+                "type": "historicDistrict",
+
+            },
+            "p1660094920577": {
+                "city": "Fargo",
+                "coord": [
+                    -96.7893524,
+                    46.8747454
+                ],
+                "country": "United States",
+                "description": "This building is a former railway station in Fargo, North Dakota. Built in 1898. Architect: Cass Gilbert, 701 Main Ave, Fargo, ND ",
+                "googleMapUrl": "https://www.google.com/maps/place/Northern+Pacific+Railway+Depot/@46.8747454,-96.7915411,17z/data=!3m1!4b1!4m5!3m4!1s0x52c8c9a8e0c7eee7:0xb098db84b881db4f!8m2!3d46.8746694!4d-96.78936",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660094920577.jpg?alt=media&token=a2af6c21-8d30-4278-9137-7f24bac8743d",
+                "location": "701 Main Ave",
+                "name": "Northern Pacific Railway Depot",
+                "pid": "p1660094920577",
+                "spaceLink": "",
+                "state": "ND",
+                "type": "historicDistrict",
+
+            },
+            "p1660095332606": {
+                "city": "Fargo",
+                "coord": [
+                    -96.7914024,
+                    46.8741481
+                ],
+                "country": "United States",
+                "description": "This building is also known as Dakota Business College or Watkins Block and was built in 1884. Designed by Fargo architects Daniels & Proctor ",
+                "googleMapUrl": "https://www.google.com/maps/place/Masonic+Building/@46.8741481,-96.7935911,17z/data=!3m1!4b1!4m5!3m4!1s0x52c8c9599cb9ed53:0x666c80d709a460a4!8m2!3d46.8741583!4d-96.7912544",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660095332606.jpg?alt=media&token=3784deb3-cb3d-428c-953c-9fd607988c43",
+                "location": "11 8th St S",
+                "name": "The Masonic Block",
+                "pid": "p1660095332606",
+                "spaceLink": "",
+                "state": "ND",
+                "type": "historicDistrict",
+
+            },
+            "p1660095415986": {
+                "city": "Fargo",
+                "coord": [
+                    -96.78812649999999,
+                    46.8796501
+                ],
+                "country": "United States",
+                "description": "The Fargo Theatre is an art deco movie theater downtown Fargo from 1926. Architecture firms: Liebenberg and Kaplan, Buechner, Orth ",
+                "googleMapUrl": "https://www.google.com/maps/place/Fargo+Theatre/@46.8796107,-96.7900939,17z/data=!3m1!4b1!4m5!3m4!1s0x52c8c966dc5ebff9:0x66f3c73104c7ec40!8m2!3d46.8796107!4d-96.7878944",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660095415986.png?alt=media&token=bc87e991-cf54-4447-ba2e-6b183947fbb9",
+                "location": "314 Broadway N ",
+                "name": "The Fargo Theater",
+                "pid": "p1660095415986",
+                "spaceLink": "",
+                "state": "ND",
+                "type": "historicDistrict",
+
+            },
+            "p1660095556462": {
+                "city": "Moorhead",
+                "coord": [
+                    -96.7794273,
+                    46.8772463
+                ],
+                "country": "United States",
+                "description": "",
+                "googleMapUrl": "https://www.google.com/maps/place/Hjemkomst+Center/@46.8778644,-96.7802356,17z/data=!3m2!4b1!5s0x52c8c969bf391919:0xd1a5418789848436!4m5!3m4!1s0x52c8c9420b0e37e3:0xec95220c2e6613!8m2!3d46.8778644!4d-96.7785769",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660095556462.jpg?alt=media&token=5d93a03c-c7e3-4583-b59c-855d09baa98d",
+                "location": "202 1st Ave N",
+                "name": "Hjemkomst Cultural Center with Stave Church ",
+                "pid": "p1660095556462",
+                "spaceLink": "http://www.hjemkomstcenter.com/",
+                "state": "MN",
+                "type": "historicDistrict",
+
+            },
+            "p1660611717999": {
+                "city": "Fargo",
+                "coord": [
+                    -96.7875107,
+                    46.8786801
+                ],
+                "country": "United States",
+                "description": "Block 9 and Jasper Hotel, 215 Broadway, Fargo, designed by Skidmore, Owings & Merrill ",
+                "googleMapUrl": "https://www.google.com/maps/place/Jasper+Hotel/@46.8785596,-96.7873578,19.53z/data=!4m15!1m6!3m5!1s0x52c8c9161ab0a621:0x76732be2aa9c0f59!2sBlock+9+Parking+Garage!8m2!3d46.8785971!4d-96.7864099!3m7!1s0x52c8c950b57b8101:0x9ea67651964f996b!5m2!4m1!1i2!8m2!3d46.8786874!4d-96.7874775",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660611717999.jpg?alt=media&token=c1adabfd-01d8-4a05-a8f2-267e5c407dea",
+                "location": "215 Broadway N",
+                "name": "Block 9 and Jasper Hotel",
+                "pid": "p1660611717999",
+                "spaceLink": "",
+                "state": "ND",
+                "type": "placesOfInterests",
+
+            },
+            "p1660611816242": {
+                "city": "Fargo",
+                "coord": [
+                    -96.79986129999999,
+                    46.8931848
+                ],
+                "country": "United States",
+                "description": "NDSU A. Glenn Hill Center, designed by BWBR with Architect of Record Zerr Berg",
+                "googleMapUrl": "https://www.google.com/maps/place/A.+Glenn+Hill+Center/@46.8931508,-96.8020295,17z/data=!3m1!4b1!4m5!3m4!1s0x52c8cbd575bb0b15:0x6b47802fc9fae477!8m2!3d46.8929371!4d-96.7998459",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660611816242.jpg?alt=media&token=24a66d27-4f9e-4c83-9c2b-a8a6bd840fad",
+                "location": "1306 Centennial Blvd",
+                "name": "NDSU A. Glenn Hill Center",
+                "pid": "p1660611816242",
+                "spaceLink": "https://www.ndsu.edu/alphaindex/buildings/Building::431",
+                "state": "ND",
+                "type": "placesOfInterests",
+
+            },
+            "p1660611940870": {
+                "city": "Fargo",
+                "coord": [
+                    -96.8437063,
+                    46.8130244
+                ],
+                "country": "United States",
+                "description": "Microsoft Corporation, 3900 Great Plains Dr. South, Fargo, designed by Julie Snow ",
+                "googleMapUrl": "https://www.google.com/maps/place/Microsoft+Horizon+Building,+3900+Great+Plains+Dr+S,+Fargo,+ND+58104/@46.8130244,-96.845895,17z/data=!3m1!4b1!4m5!3m4!1s0x52c8cd1e64694f0d:0xe7e8f0bd024f66ce!8m2!3d46.8130244!4d-96.8437063",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660611940870.png?alt=media&token=844ec605-6cd7-4ecf-9e17-311ca60a2e6f",
+                "location": "3900 Great Plains Dr S",
+                "name": "Microsoft Corporation",
+                "pid": "p1660611940870",
+                "spaceLink": "",
+                "state": "ND",
+                "type": "placesOfInterests",
+
+            },
+            "p1660612064658": {
+                "city": "Moorhead",
+                "coord": [
+                    -96.7673737,
+                    46.8730031
+                ],
+                "country": "United States",
+                "description": "St. John’s Episcopal Church, 120 8th St. S, Moorhead, Minnesota, design by Cass Gilbert ",
+                "googleMapUrl": "https://www.google.com/maps/place/Church+of+St+John+the+Divine/@46.8730204,-96.7695295,17.07z/data=!4m5!3m4!1s0x52c8c93f28519d21:0x7d1f9b892e7ebcbd!8m2!3d46.8729812!4d-96.7675129",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660612064658.%20John%E2%80%99s%20Episcopal%20Church.jpg?alt=media&token=285f8272-cecf-4167-bec2-d47f2108f971",
+                "location": "120 8th St S",
+                "name": "St. John’s Episcopal Church",
+                "pid": "p1660612064658",
+                "spaceLink": "",
+                "state": "MN",
+                "type": "placesOfInterests",
+
+            },
+            "p1660615067891": {
+                "city": "Collegeville",
+                "coord": [
+                    -94.39225619999999,
+                    45.5799736
+                ],
+                "country": "United States",
+                "description": "St John’s Abbey, Collegeville, Minnesota, designed by Marcel Breuer (2 hrs from Fargo) ",
+                "googleMapUrl": "https://www.google.com/maps/place/St+John's+Abbey/@45.5802644,-94.4054864,14.98z/data=!4m5!3m4!1s0x52b456c68d14cf47:0xe231ee7aa8861252!8m2!3d45.5799327!4d-94.3920331",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660615067891.%20Johns%20by%20Breuer%20%5B2%5D.jpeg?alt=media&token=307c33a2-d22a-46c2-aec5-0cda8af21561",
+                "location": "2900 Abbey Plaza",
+                "name": "St John’s Abbey",
+                "pid": "p1660615067891",
+                "spaceLink": "http://www.saintjohnsabbey.org/",
+                "state": "MN",
+                "type": "placesOfInterests",
+
+            },
+            "p1660615170043": {
+                "city": "Bismarck",
+                "coord": [
+                    -100.750426,
+                    46.7278373
+                ],
+                "country": "United States",
+                "description": "The University of Mary, Bismarck (drive west 2 hr. 45 min.) designed / constructed 1956–1968, Marcel Breuer with others. 7520 University Dr. Bismarck, ND ",
+                "googleMapUrl": "https://www.google.com/maps/place/University+of+Mary/@46.7237962,-100.7541836,17z/data=!3m1!4b1!4m5!3m4!1s0x52d79c3a02b5607d:0x738cbb4e2494f768!8m2!3d46.7237962!4d-100.7519949",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660615170043.jpeg?alt=media&token=0b432b2a-9c71-49e4-a085-5ee8948ab5eb",
+                "location": "7500 University Dr",
+                "name": "The University of Mary, Bismarck",
+                "pid": "p1660615170043",
+                "spaceLink": "http://www.umary.edu/",
+                "state": "CA",
+                "type": "placesOfInterests",
+
+            },
+            "p1660615256481": {
+                "city": "Winnipeg, MB R3C 0L5",
+                "coord": [
+                    -97.1319889,
+                    49.8917382
+                ],
+                "country": "Canada",
+                "description": "Winnipeg (drive 4 hours north) 2014, architect Antoine Predock, 85 Israel Asper Way, Winnipeg, MB, Canada",
+                "googleMapUrl": "https://www.google.com/maps/place/Canadian+Museum+for+Human+Rights/@49.8907908,-97.1331317,17z/data=!3m1!4b1!4m5!3m4!1s0x52ea715ac2af235d:0xd270f6cd52aaf6b4!8m2!3d49.8906715!4d-97.1319418",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660615256481.jpg?alt=media&token=2425f48b-8f24-4c6f-9be7-c1f8d0be73fe",
+                "location": "85 Israel Asper Way",
+                "name": "Canadian Museum for Human Rights",
+                "pid": "p1660615256481",
+                "spaceLink": "",
+                "state": " ",
+                "type": "placesOfInterests",
+
+            },
+            "p1660615353774": {
+                "city": "Dunseith",
+                "coord": [
+                    -100.0522869,
+                    48.9941074
+                ],
+                "country": "United States",
+                "description": "",
+                "googleMapUrl": "https://www.google.com/maps/place/International+Peace+Garden/@48.9979013,-100.0695741,17.05z/data=!4m12!1m6!3m5!1s0x52dda18c3924b361:0x9717f07252d82af!2sInternational+Peace+Garden!8m2!3d49.0013353!4d-100.0672191!3m4!1s0x52ddadd3cded9c81:0x5dc0c7321340b959!8m2!3d48.9981389!4d-100.0670104",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660615353774.png?alt=media&token=a26ac33d-3929-4750-a2cd-042b66459a89",
+                "location": "10939 US-281",
+                "name": "International Peace Garden",
+                "pid": "p1660615353774",
+                "spaceLink": "http://www.peacegarden.com/",
+                "state": "ND",
+                "type": "placesOfInterests",
+
+            },
+            "p1660615483608": {
+                "city": "Cooperstown",
+                "coord": [
+                    -98.12698610000001,
+                    47.4976594
+                ],
+                "country": "United States",
+                "description": " OscarZero (including November-33) is an underground Atomic Missile Facility in Cooperstown, ND, activated 1966, 555 113 1/2 Ave NE, Cooperstown, ND (drive west 1 hr. 30 min.) ",
+                "googleMapUrl": "https://www.google.com/maps/place/Ronald+Reagan+Minuteman+Missile+State+Historic+Site/@47.4976388,-98.1294522,566m/data=!3m2!1e3!4b1!4m5!3m4!1s0x52c56afb505bb2d5:0xbc24bc2dde918512!8m2!3d47.4976116!4d-98.1272636",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660615483608.jpg?alt=media&token=867a869e-bad3-4e55-ad66-1616e96b6c65",
+                "location": "555 113 1/2 Ave NE",
+                "name": "Ronald Reagan Minuteman Missile State Historic Site",
+                "pid": "p1660615483608",
+                "spaceLink": "http://history.nd.gov/historicsites/minutemanmissile/index.html",
+                "state": "ND",
+                "type": "military",
+
+            },
+            "p1660615584890": {
+                "city": "Nekoma",
+                "coord": [
+                    -98.6443903,
+                    48.5871755
+                ],
+                "country": "United States",
+                "description": "Stanley R. Mickelsen Safeguard Complex and Nekoma Pyramid is a Missile Site Radar. This radar was once armed with 16 anti-ballistic missile Sprint including 30 Spartan missiles.",
+                "googleMapUrl": "https://www.google.com/maps/place/Stanley+R.+Mickelsen+Safeguard+Complex/@48.5887039,-98.3698487,554m/data=!3m2!1e3!4b1!4m5!3m4!1s0x52c36f776968b671:0xd8cc1b1384dfa519!8m2!3d48.588704!4d-98.365364",
+                "image": "https://firebasestorage.googleapis.com/v0/b/sodaa-db.appspot.com/o/sodaa-project-image%2Fp1660615584890.JPG?alt=media&token=b7f253a3-e3bb-43d9-bdc9-f24537e48a6e",
+                "location": "81st St NE",
+                "name": "Stanley R. Mickelsen Safeguard Complex and Nekoma Pyramid",
+                "pid": "p1660615584890",
+                "spaceLink": "",
+                "state": "ND",
+                "type": "military",
+
+            }
+        }
+
+
+        new JDom({
+            type: 'ul',
+            children: ["first item", "second item", "third item"]
+        }).render(".text-list");
+
+        new JDom({
+            type: 'ul',
+            children: Object.values(data).map(item => item.name)
+        }).render(".list-1");
+
+
+        new JDom({
+            type: 'ul',
+            children: Object.values(data).map(item => {
+                return {
+                    type: "li",
+                    attr: {
+                        className: "card",
+                        style: {
+                            listStyle: "none"
+                        }
+                    },
+                    children: [{
+                        type: "p",
+                        attr: {
+                            style: {
+                                color: "blue",
+                            }
+                        },
+                        content: item.name
+                    }]
+                }
+            })
+        }).render(".list-2");
+    </script>
+</body>
+
+</html>
