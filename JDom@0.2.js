@@ -1,7 +1,7 @@
 /**
- * Version 0.1
+ * Version 0.2
  * Author: Aaron Yang
- * Date updated: 12/15/2021
+ * Date updated: 9/28/2022
  * JDom is a helper class that creates Dom elements from JSON-structured data.
  * This class creates, updates, and removes HTML nodes by directly manipulating DOM elements. 
  * A performance-optimization algorithm, like diffing algorithm in React, might be added in the future version.    
@@ -11,10 +11,10 @@ class JDom {
      * 
      * @param {Object} node An object that represent the structure of the DOM.
      * @param {String} node.type The tag name of the top-level node.
-     * @param {Object} [node.attr]
-     * @param {string|HTMLElement|JDom} [node.content] 
+     * @param {Object} [node.attr] The attributes of the DOM element you are creating.
+     * @param {string|HTMLElement|JDom} [node.content] The content to be added.
      * @param {Object} [node.events] A key-value paired list of events to be listened by eventlistener. For example, { click: e => { console.log("clicked!") } }
-     * @param {[Object|string|JDom]} [node.chilren]
+     * @param {[Object|string|JDom]} [node.chilren] The child node(s) of the element.
      * 
      */
     constructor(node) {
@@ -22,18 +22,18 @@ class JDom {
         this.elements = this.#makeElement(this.node);
         this.isJDOM = true;
         this.containerSelector = null;
-        
+        this.idList = [];
     }
 
     /**
      * 
      * @param {Object} node An object that represent the structure of the DOM.
      * @param {String} node.type The tag name of the top-level node.
-     * @param {Object} [node.attr]
-     * @param {string|HTMLElement|JDom} [node.content] 
+     * @param {Object} [node.attr] The attributes of the DOM element you are creating.
+     * @param {string|HTMLElement|JDom} [node.content] The content to be added.
      * @param {Object} [node.events] A key-value paired list of events to be listened by eventlistener. For example, { click: e => { console.log("clicked!") } }
-     * @param {[Object|string|JDom]} [node.chilren]
-     * @returns HTMLElementelement
+     * @param {[Object|string|JDom]} [node.chilren] The child node(s) of the element.
+     * 
      */
     #makeElement(node) {
         
@@ -57,6 +57,9 @@ class JDom {
                     }
                 } else {
                     ele[key] = node.attr[key];
+                    if (key === "id") {
+                        this.idList.push(ele[key]);
+                    }
                 }
             }
         }
@@ -151,7 +154,7 @@ class JDom {
         if (this.node.attr && typeof(this.node.attr.id) !== "undefined") {
             return document.getElementById(this.node.attr.id);
         } else {
-            throw "to use remove() function, an id must be assgiend to this element."
+            throw "to use remove() function, an id must be assgined to this element."
         }
     }
 
@@ -174,6 +177,14 @@ class JDom {
         const tmpDiv = document.createElement("div");
         tmpDiv.innerHTML = str;
         return tmpDiv.firstElementChild || null;
+    }
+
+    makeForm(){
+        console.log("this function makes a form");
+    }
+
+    makeTable(){
+        console.log("this function makes a table");
     }
 
 }

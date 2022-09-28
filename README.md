@@ -2,6 +2,15 @@
 
 This class convert a JSON-structured data into DOM.
 
+## Use
+```Javascript
+// Create the instance:
+const myElement = new JDom({your JSON object});
+
+// Render in the DOM:
+myElement.render("class-name or idName");
+```
+
 The constructor receives an object in following structure:
 
 ```Javascript
@@ -16,7 +25,7 @@ The constructor receives an object in following structure:
             fontSize: "1em"
         }
     },
-    children: [                     // you can also create the child nodes by adding node objects, this support event lisener for the children.
+    children: [     // you can also create the child nodes by adding node objects, this support event lisener for the children.
         {
             type: "h4",
             props: {
@@ -31,7 +40,7 @@ The constructor receives an object in following structure:
 }
 ```
 
-## Example
+## Examples
 
 ```javascript
 const card = new JDom({
