@@ -3,12 +3,13 @@
 This class convert a JSON-structured data into DOM.
 
 ## Use
+
 ```Javascript
 // Create the instance:
-const myElement = new JDom({your JSON object});
+const myElement = new JDom({your_JSON_object});
 
-// Render in the DOM:
-myElement.render("class-name or idName");
+// Render in the DOM element with selected class name or id name:
+myElement.render(".class-name or #idName");
 ```
 
 The constructor receives an object in following structure:
@@ -16,16 +17,16 @@ The constructor receives an object in following structure:
 ```Javascript
 {
     type: "p",    // type of the DOM element you want to create
-    content: "You can add your content here",   // string, HTML element, or JDom object are accepted. 
-    attr: {      // the attributs you want to set for the element
+    content: "You can add your content here",   // [optional] string, HTML element, or JDom object are accepted. 
+    attr: {      // [optional] the attributs you want to set for the element
         className: "text-big",
-        innerHTML: "Another method to add content.",    // you can create the child nodes by using innerHTML
-        style: {    // add inline styles here
+        innerHTML: "Another method to add content.",    // [optional] you can create the child nodes by using innerHTML
+        style: {    // [optional] add inline styles here
             color: "red",
             fontSize: "1em"
         }
     },
-    children: [     // you can also create the child nodes by adding node objects, this support event lisener for the children.
+    children: [     // [optional] you can also create the child nodes by adding node objects, this support event lisener for the children.
         {
             type: "h4",
             props: {
@@ -34,13 +35,23 @@ The constructor receives an object in following structure:
             }
         }  
     ],
-    events: {    // This is a list of the events to listen.
+    events: {    // [optional] This is a list of the events to listen.
         click: e => { console.log("clicked") }    
     }
 }
 ```
 
 ## Examples
+
+Create a card and append it to a container.
+
+Your HTML:
+
+```HTML
+<div class="container"></div>
+```
+
+JavaScript:
 
 ```javascript
 const card = new JDom({
@@ -67,20 +78,18 @@ const card = new JDom({
             }
         ]
     });
-```
 
-To insert the element into your HTML document, use `render()` function:
-
-```javascript
 card.render(".container");
 ```
 
 Following DOM elements will be created:
 
 ```html
-    <div class="card-body">
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">some text...</p>
+    <div class="container">
+        <div class="card-body">
+            <h4 class="card-title">Title</h4>
+            <p class="card-text">some text...</p>
+        </div>
     </div>
 ```
 
@@ -104,11 +113,14 @@ new JDom({
 Result:
 
 ```html
-<ul>
-    <li>first item</li>
-    <li>second item</li>
-    <li>third item</li>
-</ul>
+<div class="text-list">
+    <ul>
+        <li>first item</li>
+        <li>second item</li>
+        <li>third item</li>
+    </ul>
+</div>
+
 ```
 
 If the container element is not ```ul``` or ```ol```, a list of ```p``` tag will be created:
@@ -123,9 +135,11 @@ new JDom({
 Result:
 
 ```html
-<div>
-    <p>first item</p>
-    <p>second item</p>
-    <p>third item</p>
+<div class="text-list">
+    <div>
+        <p>first item</p>
+        <p>second item</p>
+        <p>third item</p>
+    </div>
 </div>
 ```
