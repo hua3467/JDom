@@ -18,8 +18,12 @@ class JDom {
      * 
      */
     constructor(node) {
-        this.node = node;
-        this.elements = this.#makeElement(this.node);
+        if (node) {
+            this.node = node;
+            this.elements = this.#makeElement(this.node);
+        } else {
+            this.elements = null;
+        }
         this.isJDOM = true;
         this.containerSelector = null;
         this.idList = [];
@@ -104,6 +108,18 @@ class JDom {
 
     }
 
+    createDOM(node){
+        this.#makeElement(node);
+    }
+
+    createForm(node){
+        console.log("this function makes a form", node);
+    }
+
+    createTable(node){
+        console.log("this function makes a table", node);
+    }
+
     /**
      * 
      * @param {string} selector id or class name of the container in DOM
@@ -179,12 +195,57 @@ class JDom {
         return tmpDiv.firstElementChild || null;
     }
 
-    makeForm(){
-        console.log("this function makes a form");
-    }
-
-    makeTable(){
-        console.log("this function makes a table");
-    }
+    
 
 }
+
+new JDom().createForm({
+    title: "My Form",   // optional
+    children: [
+        {
+            inputType: "input",
+            label: "Name",
+            attr: {
+                name: "name",
+                id: "name",
+                value: "Aaron",
+                required: true
+            }
+        }, {
+            inputType: "email",
+            label: "Email",
+            attr: {
+                name: "email",
+                id: "email",
+                value: "aaron@email.com",
+                required: true
+            }
+        }, {
+            inputType: "select",
+            label: "Year",
+            attr: {
+                name: "year",
+                id: "year",
+                value: "2021",
+                required: true
+            },
+            children: [
+                {
+                    value: 2021,
+                    text: 2021
+                }, {
+                    value: 2022,
+                    text: 2022
+                }
+            ]
+        }
+    ],
+    events: {
+        submit:e => {
+            console.log("Submit");
+        }
+    }
+}, {
+    labelPosition: "top",   // top | left
+    buttonName: "Save"      // default: Submit
+})
